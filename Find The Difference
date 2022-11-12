@@ -1,0 +1,24 @@
+class Solution {
+    public char findTheDifference(String s, String t) {
+        int sSum = 0;
+        int tSum = 0;
+        for(int i=0;i<s.length();i++)
+            sSum+=(int)s.charAt(i);
+        for(int i=0;i<t.length();i++)
+            tSum+=(int)t.charAt(i);
+        char diff = (char)(tSum-sSum);
+        return diff;
+    }
+}
+
+/*
+BEST SOLUTION
+class Solution {
+    public char findTheDifference(string s, string t) 
+    {
+      for(int i=0;i<s.size();i++)
+		t[i+1]+=t[i]-s[i]; //Passing the diff: (t[i]-s[i]) to t[i+1]
+      return t[t.size()-1]; //The diff will be carried over to the last element eventually
+    }
+}
+*/
