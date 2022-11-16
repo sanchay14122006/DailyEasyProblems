@@ -1,0 +1,15 @@
+class Solution {
+    public boolean isHappy(int num) {
+        int sum;
+        while(num!=0&&num!=4&&num!=16&&num!=20&&num!=37&&num!=42&&num!=58&&num!=89&&num!=145)
+        {
+            sum=0;
+            for(int i=num;i!=0;i/=10)
+                sum+=Math.pow(i%10,2);
+            if(sum==1)
+                return true;
+            num = sum;
+        }
+        return false;
+    }
+}
